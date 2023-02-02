@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Icon/Tick</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon/Tick" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="40" height="40"></rect>
+        <path d="M9.82842712,18.5961941 L18.3137085,27.0814755 L15.4852814,29.9099026 L7,21.4246212 L9.82842712,18.5961941 Z M29.8743687,10 L32.7027958,12.8284271 L19.9748737,25.5563492 L17.1464466,22.7279221 L29.8743687,10 Z" id="Combined-Shape" fill="#000000"></path>
+    </g>
+</svg>

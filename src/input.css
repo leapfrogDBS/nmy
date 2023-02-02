@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .headingOne {
+        @apply text-5xl leading-tight lg:leading-tight lg:text-6xl 2xl:text-7xl ;
+    }
+    .headingTwo {
+        @apply text-4xl font-normal lg:text-5xl lg:leading-tight xl:leading-tight xl:text-6xl;
+    }
+    .headingThree {
+        @apply text-4xl font-normal leading-tight lg:text-5xl;
+    }
+    .headingFour {
+        @apply text-xl font-normal leading-none lg:text-2xl;
+    }
+    .headingFive {
+        @apply text-xl font-normal leading-normal lg:text-2xl;
+    }
+    .bodyText {
+        @apply text-base font-normal leading-normal mb-8 lg:mb-12 lg:text-lg;
+    }
+    .subtitleOne {
+        @apply text-sm font-normal leading-normal lg:text-xl;
+    }
+    .subtitleTwo {
+        @apply text-sm font-normal leading-normal lg:text-xl;
+    }
+    
+
+    #main section {
+        @apply py-14 lg:py-24;
+    }
+    .container {
+        @apply w-auto mx-12 md:mx-auto md:w-10/12 max-w-[1200px];;
+    }
+    .row {
+        @apply grid grid-cols-12 lg:gap-5;
+    }
+    .col {
+        @apply col-span-12 mb-0; 
+    }
+       
+}
+
+#navbar {
+    background-color: #333; /* Black background color */
+    position: fixed; /* Make it stick/fixed */
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+  }
+  
+  /* Style the navbar links */
+  #navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+  }
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 2;
+    transform: translateY(0);
+    transition: transform 1s ease;
+  }
+  
+  .main-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .curtain.reveal {
+    transform: translateY(-100%);
+  }
+
+  

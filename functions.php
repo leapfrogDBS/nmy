@@ -176,3 +176,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function add_custom_scripts() {
+	wp_enqueue_script('app-js', get_template_directory_uri() . '/js/app.js');
+	wp_enqueue_style('tailwind-css', get_template_directory_uri() . '/css/tailwind.css');
+	
+	}
+	
+	add_action( 'wp_enqueue_scripts', 'add_custom_scripts' );
+
+	if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+function my_jquery_enqueue() {
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", false, null);
+   wp_enqueue_script('jquery');
+}
