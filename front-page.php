@@ -11,7 +11,13 @@ get_header();
 	<main id="primary" class="site-main">
         <?php
 
-include(locate_template('template-parts/home/hero.php'));
+			include(locate_template('template-parts/home/hero.php'));
+			include(locate_template('template-parts/home/meet-a-side.php'));
+			include(locate_template('template-parts/home/what-is.php'));
+			include(locate_template('template-parts/home/life-at.php'));
+			include(locate_template('template-parts/home/featured-amenities.php'));
+
+			include(locate_template('template-parts/home/extra.php'));
 		
 		?>
 
@@ -19,3 +25,4 @@ include(locate_template('template-parts/home/hero.php'));
 
 <?php
 get_footer();
+

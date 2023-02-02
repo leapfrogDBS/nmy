@@ -177,16 +177,63 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 function add_custom_scripts() {
+	wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js');
 	wp_enqueue_script('app-js', get_template_directory_uri() . '/js/app.js');
 	wp_enqueue_style('tailwind-css', get_template_directory_uri() . '/css/tailwind.css');
-	
-	}
-	
-	add_action( 'wp_enqueue_scripts', 'add_custom_scripts' );
-
-	if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
-function my_jquery_enqueue() {
-   wp_deregister_script('jquery');
-   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", false, null);
-   wp_enqueue_script('jquery');
+	wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css');	
 }
+	
+add_action( 'wp_enqueue_scripts', 'add_custom_scripts' );
+
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+	function my_jquery_enqueue() {
+  		wp_deregister_script('jquery');
+   		wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", false, null);
+   		wp_enqueue_script('jquery');
+}
+
+function create_custom_post_types() {
+	register_post_type('apartments',
+	  array(
+		'labels' => array(
+		  'name' => __('Apartments'),
+		  'singular_name' => __('Apartment')
+		),
+		'public' => true,
+		'has_archive' => true,
+		'menu_icon' => 'dashicons-admin-home',
+		'supports' => array( 'title', 'editor', 'thumbnail' ),
+	  )
+	);
+	
+	register_post_type('amenities',
+	  array(
+		'labels' => array(
+		  'name' => __('Amenities'),
+		  'singular_name' => __('Amenity')
+		),
+		'public' => true,
+		'has_archive' => true,
+		'menu_icon' => 'dashicons-admin-generic',
+		'supports' => array( 'title', 'thumbnail' ),
+	  )
+	);
+	
+	register_post_type('featured_amenities',
+	  array(
+		'labels' => array(
+		  'name' => __('Featured Amenities'),
+		  'singular_name' => __('Featured Amenity')
+		),
+		'public' => true,
+		'has_archive' => true,
+		'menu_icon' => 'dashicons-star-filled',
+		'supports' => array( 'title', 'thumbnail' ),
+	  )
+	);
+  }
+  add_action('init', 'create_custom_post_types');
+  
+
+  
+

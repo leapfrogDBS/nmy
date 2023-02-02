@@ -57,3 +57,6 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+	<div class="curtain z-50">
+  		<div class="curtain-inner"></div>
+	</div>
