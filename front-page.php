@@ -16,8 +16,12 @@ get_header();
 			include(locate_template('template-parts/home/what-is.php'));
 			include(locate_template('template-parts/home/life-at.php'));
 			include(locate_template('template-parts/home/featured-amenities.php'));
+			include(locate_template('template-parts/home/amenities.php'));
+			include(locate_template('template-parts/home/apartments.php'));
+			include(locate_template('template-parts/contact.php'));
 
-			include(locate_template('template-parts/home/extra.php'));
+		
+			
 		
 		?>
 

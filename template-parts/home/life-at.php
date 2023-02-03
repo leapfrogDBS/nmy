@@ -10,7 +10,7 @@ $la_gallery = get_field('la_gallery');
         <div class="col">
             <h2 class="headingTwo text-center"><?php echo $la_title; ?></h2>
             <?php if ($la_gallery) { ?>
-                <div class="life-at-swiper">
+                <div class="life-at-swiper overflow-hidden">
                     <div class="swiper-wrapper">
                         <?php foreach ($la_gallery as $la_image) { ?> 
                             <div class="swiper-slide">
@@ -39,29 +39,4 @@ var swiper = new Swiper('.life-at-swiper', {
 });
 </script>
 
-<section>
-    <div class="row">
-        <div class="col">
-        <?php 
-  $amenities = new WP_Query( array( 
-    'post_type' => 'amenities', 
-    'posts_per_page' => -1 
-  ) ); 
-  if ( $amenities->have_posts() ) : 
-    while ( $amenities->have_posts() ) : $amenities->the_post(); 
-?> 
-  <div class="amenity">
-    <h2 class="amenity-title"><?php the_title(); ?></h2>
-    <?php the_post_thumbnail( 'large', array( 'class' => 'amenity-featured-image' ) ); ?>
-    <div class="amenity-copy">
-      <?php echo get_field( 'amenities_copy' ); ?>
-    </div>
-  </div>
-<?php 
-    endwhile; 
-  endif; 
-  wp_reset_postdata(); 
-?>
-        </div>
-    </div>
-</section>
+
