@@ -11,12 +11,10 @@
 
 ?>
 
-
-
-	<footer id="colophon" class="site-footer bg-cover py-24 text-white" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/footer-background.svg)">
+	<footer id="colophon" class="site-footer bg-cover pt-12 pb-6 text-white relative" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/footer-background.svg)">
 		<div class="container">
 			<div class="row grid-cols-5 gap-x-6">
-				<div class="col flex flex-col gap-y-12 col-span-1">
+				<div class="col flex flex-col gap-y-6 col-span-5 lg:col-span-1">
 					<?php
 					// get custom field footer_logo image and display
 					$footer_logo = get_field('footer_logo', 'option');
@@ -45,33 +43,36 @@
 					endif;
 					?>
 				</div>
-				<div class="col col-span-1">
-					<p class="bodyText mb-8">Apartments</p>
-					<p class="bodyText">Location</p>
+
+				<div class="col col-span-5 flex mt-8 pb-8 border-b-[1px] border-white border-opacity-10 lg:border-0 lg:col-span-2 lg:pl-16 lg:mt-0 lg:pb-0	">
+					<div>
+					<p class="bodyTwo mb-4">Apartments</p>
+						<p class="bodyTwo">Location</p>
+					</div>
+					<div class="pl-24">
+						<p class="bodyTwo mb-4">Amenities & Spaces</p>
+						<p class="bodyTwo">Contact</p>
+					</div>
 				</div>
-				<div class="col col-span-1">
-					<p class="bodyText mb-8">Apartments</p>
-					<p class="bodyText">Location</p>
+				<div class="col col-span-5 py-8 lg:col-span-1 lg:py-0">
+					<div class="lg:border-l-[1px] flex lg:flex-col lg:border-white lg:border-opacity-10 lg:pl-6">
+						<p class="bodyTwo mb-4"><i class="fa-solid fa-circle-info mr-2"></i> FAQ</p>
+						<p class="bodyTwo pl-24 lg:pl-0"><i class="fa-solid fa-download mr-2"></i> Brochure</p>
+					</div>
 				</div>
-				<div class="col col-span-1">
-					<p class="bodyText mb-8"><i class="fa-solid fa-circle-info"></i> Apartments</p>
-					<p class="bodyText"><i class="fa-solid fa-download"></i> Location</p>
-				</div>
-				<div class="col col-span-1">
-					<p class="bodyText mb-4 font-happy italic">Start your application here.</p>
-					<a href="#" class="whiteCtaButton text-black bg-white py-2 px-4">Apply Now</a>
-				</div>
-				
+				<div class="col col-span-5 lg:col-span-1">
+					<p class="bodyTwo mb-4 lg:font-happy lg:italic text-sm">Start your application here.</p>
+					<a href="#" class="ctaButtonWhite text-black bg-white">Apply Now</a>
+				</div>				
 			</div>
 			<div class="row mt-12">
-				<div class="col flex justify-between">
+				<div class="col flex flex-col lg:flex-row justify-between gap-y-4">
 					<p class="subtitleTwo">© 2023 Newmarket Yards. All right reserved. Designed by Rowdy Studio. CGIs are for illustrative purposes only.</p>
 					<p class="subtitleTwo">Privacy Policy</p>
 				</div>
-			</div>
-
-			
-		</div>			
+			</div>		
+		</div>	
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/mobile-footer.svg" class="absolute bottom-0 right-0 lg:hidden" alt="footer background">
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

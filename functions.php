@@ -200,8 +200,21 @@ function create_custom_post_types() {
 		  'singular_name' => __('Apartment')
 		),
 		'public' => true,
-		'has_archive' => true,
+		'has_archive' => false,
 		'menu_icon' => 'dashicons-admin-home',
+		'supports' => array( 'title', 'thumbnail' ),
+	  )
+	);
+
+	register_post_type('styles',
+	  array(
+		'labels' => array(
+		  'name' => __('Styles'),
+		  'singular_name' => __('Style')
+		),
+		'public' => true,
+		'has_archive' => false,
+		'menu_icon' => 'dashicons-art',
 		'supports' => array( 'title', 'thumbnail' ),
 	  )
 	);
